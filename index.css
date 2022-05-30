@@ -1,0 +1,100 @@
+:root {
+  --background-color: black;
+  --color: white;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+body.light-mode {
+  --background-color: white;
+  --color: black;
+}
+
+/* App */
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Sun */
+#sun {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+/* Skyline */
+#skyline {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+rect.window {
+  stroke: var(--background-color);
+}
+
+g.building {
+  stroke: var(--color);
+  fill: var(--background-color);
+}
+
+polyline.building-outline {
+  stroke: var(--color);
+}
+
+line.ground {
+  stroke: var(--color);
+}
+
+line.building-bottom {
+  stroke: var(--background-color);
+}
+
+/* Footer */
+#footer {
+  flex: 0 1 auto;
+  display: flex;
+  font-family: sans-serif;
+  position: relative;
+  min-width: 0;
+  align-items: center;
+}
+
+#name {
+  flex: 1 1 0;
+  text-align: center;
+}
+
+button {
+  flex: 0 1 min-content;
+  background-color: var(--background-color);
+  border: none;
+  color: var(--color);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+
+button.info {
+  border: 1px solid var(--color);
+  border-radius: 20px;
+  height: min-content;
+  font-size: 12px;
+  padding: 0 6px;
+  margin-right: 0;
+  margin-left: 10px;
+}
