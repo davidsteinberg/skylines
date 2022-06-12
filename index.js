@@ -541,7 +541,9 @@ const ui = {
     svg: select("svg"),
     infoButton: select("#infoButton"),
     name: select("#name"),
-    refreshButton: select("#refreshButton")
+    refreshButton: select("#refreshButton"),
+    about: select("#about"),
+    aboutClose: select("#about > .close")
 };
 const LIGHT_MODE_PREF_KEY = "light-mode";
 let inDarkMode = true;
@@ -616,9 +618,12 @@ const refresh = ()=>{
     refreshSkyline();
 };
 refresh();
-const goToGitHub = ()=>{
-    window.open("https://github.com/davidsteinberg/skylines", "_blank");
+const showAbout = ()=>{
+    ui.about.classList.remove("hidden");
 };
+ui.aboutClose.addEventListener("click", ()=>{
+    ui.about.classList.add("hidden");
+});
 ui.sun.addEventListener("click", toggleMode);
 ui.refreshButton.addEventListener("click", refresh);
-ui.infoButton.addEventListener("click", goToGitHub);
+ui.infoButton.addEventListener("click", showAbout);

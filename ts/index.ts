@@ -12,6 +12,8 @@ const ui = {
   infoButton: select("#infoButton")!,
   name: select("#name")!,
   refreshButton: select("#refreshButton")!,
+  about: select("#about")!,
+  aboutClose: select("#about > .close")!,
 };
 
 // Sun
@@ -115,11 +117,15 @@ const refresh = () => {
 refresh();
 
 // Info
-const goToGitHub = () => {
-  window.open("https://github.com/davidsteinberg/skylines", "_blank");
+const showAbout = () => {
+  ui.about.classList.remove("hidden");
 };
+
+ui.aboutClose.addEventListener("click", () => {
+  ui.about.classList.add("hidden");
+});
 
 // User interaction
 ui.sun.addEventListener("click", toggleMode);
 ui.refreshButton.addEventListener("click", refresh);
-ui.infoButton.addEventListener("click", goToGitHub);
+ui.infoButton.addEventListener("click", showAbout);

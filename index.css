@@ -12,6 +12,7 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--color);
+  font-family: sans-serif;
 }
 
 body.light-mode {
@@ -66,7 +67,6 @@ line.building-bottom {
 #footer {
   flex: 0 1 auto;
   display: flex;
-  font-family: sans-serif;
   position: relative;
   min-width: 0;
   align-items: center;
@@ -97,4 +97,40 @@ button.info {
   padding: 0 6px;
   margin-right: 0;
   margin-left: 10px;
+}
+
+/* About */
+#about {
+  --padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - calc(2 * var(--padding)));
+  height: calc(100% - calc(2 * var(--padding)));
+  padding: var(--padding);
+  overflow: scroll;
+  z-index: 2;
+  background-color: white;
+  color: black;
+}
+
+#about > .body {
+  margin: auto;
+  max-width: 600px;
+}
+
+#about > .close {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about.hidden {
+  display: none;
 }
